@@ -1,0 +1,20 @@
+﻿  Game.cpp
+C:\Users\gabri\Documents\ERIC CURSO\Tecnicatura en Videojuegos\PROGRAMACIÓN DE VIDEOJUEGOS I\ENTREGAS\Math-train-PVD-I\Math train-PDV-I\Math train-PDV-I\Game.cpp(8,25): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+C:\Users\gabri\Documents\ERIC CURSO\Tecnicatura en Videojuegos\PROGRAMACIÓN DE VIDEOJUEGOS I\ENTREGAS\Math-train-PVD-I\Math train-PDV-I\Math train-PDV-I\Game.cpp(34,20): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\gabri\Documents\ERIC CURSO\Tecnicatura en Videojuegos\PROGRAMACIÓN DE VIDEOJUEGOS I\ENTREGAS\Math-train-PVD-I\Math train-PDV-I\Math train-PDV-I\Game.cpp(35,20): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\gabri\Documents\ERIC CURSO\Tecnicatura en Videojuegos\PROGRAMACIÓN DE VIDEOJUEGOS I\ENTREGAS\Math-train-PVD-I\Math train-PDV-I\Math train-PDV-I\Game.cpp(36,20): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\gabri\Documents\ERIC CURSO\Tecnicatura en Videojuegos\PROGRAMACIÓN DE VIDEOJUEGOS I\ENTREGAS\Math-train-PVD-I\Math train-PDV-I\Math train-PDV-I\Game.cpp(37,20): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\gabri\Documents\ERIC CURSO\Tecnicatura en Videojuegos\PROGRAMACIÓN DE VIDEOJUEGOS I\ENTREGAS\Math-train-PVD-I\Math train-PDV-I\Math train-PDV-I\Game.cpp(70,35): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\gabri\Documents\ERIC CURSO\Tecnicatura en Videojuegos\PROGRAMACIÓN DE VIDEOJUEGOS I\ENTREGAS\Math-train-PVD-I\Math train-PDV-I\Math train-PDV-I\Game.cpp(70,29): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\gabri\Documents\ERIC CURSO\Tecnicatura en Videojuegos\PROGRAMACIÓN DE VIDEOJUEGOS I\ENTREGAS\Math-train-PVD-I\Math train-PDV-I\Math train-PDV-I\Game.cpp(97,31): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\gabri\Documents\ERIC CURSO\Tecnicatura en Videojuegos\PROGRAMACIÓN DE VIDEOJUEGOS I\ENTREGAS\Math-train-PVD-I\Math train-PDV-I\Math train-PDV-I\Game.cpp(97,25): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\gabri\Documents\ERIC CURSO\Tecnicatura en Videojuegos\PROGRAMACIÓN DE VIDEOJUEGOS I\ENTREGAS\Math-train-PVD-I\Math train-PDV-I\Math train-PDV-I\Game.cpp(101,31): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\gabri\Documents\ERIC CURSO\Tecnicatura en Videojuegos\PROGRAMACIÓN DE VIDEOJUEGOS I\ENTREGAS\Math-train-PVD-I\Math train-PDV-I\Math train-PDV-I\Game.cpp(101,25): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\gabri\Documents\ERIC CURSO\Tecnicatura en Videojuegos\PROGRAMACIÓN DE VIDEOJUEGOS I\ENTREGAS\Math-train-PVD-I\Math train-PDV-I\Math train-PDV-I\Game.cpp(105,31): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\gabri\Documents\ERIC CURSO\Tecnicatura en Videojuegos\PROGRAMACIÓN DE VIDEOJUEGOS I\ENTREGAS\Math-train-PVD-I\Math train-PDV-I\Math train-PDV-I\Game.cpp(105,25): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\gabri\Documents\ERIC CURSO\Tecnicatura en Videojuegos\PROGRAMACIÓN DE VIDEOJUEGOS I\ENTREGAS\Math-train-PVD-I\Math train-PDV-I\Math train-PDV-I\Game.cpp(109,31): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\gabri\Documents\ERIC CURSO\Tecnicatura en Videojuegos\PROGRAMACIÓN DE VIDEOJUEGOS I\ENTREGAS\Math-train-PVD-I\Math train-PDV-I\Math train-PDV-I\Game.cpp(109,25): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  Go.cpp
+C:\Users\gabri\Documents\ERIC CURSO\Tecnicatura en Videojuegos\PROGRAMACIÓN DE VIDEOJUEGOS I\ENTREGAS\Math-train-PVD-I\Math train-PDV-I\Math train-PDV-I\Go.cpp(6,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  Generando código...
+  Math train-PDV-I.vcxproj -> C:\Users\gabri\Documents\ERIC CURSO\Tecnicatura en Videojuegos\PROGRAMACIÓN DE VIDEOJUEGOS I\ENTREGAS\Math-train-PVD-I\Math train-PDV-I\x64\Debug\Math train-PDV-I.exe
