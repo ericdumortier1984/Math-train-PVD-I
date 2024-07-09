@@ -4,6 +4,6 @@
 
 {
 
-Juego utilizano litas enlazadas
+Juego utilizando listas enlazadas
 
 }
