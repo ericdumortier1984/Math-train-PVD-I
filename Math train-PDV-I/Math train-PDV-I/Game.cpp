@@ -67,8 +67,7 @@ void Game::InitGame()
 	textureBackground = new Texture;
 	textureBackground->loadFromFile("Assets/Images/fondo.png");
 	spriteBackground = new Sprite(*textureBackground);
-	spriteBackground->setScale(0.20, 0.20);
-	spriteBackground->setPosition(-20, 0);
+	spriteBackground->setPosition(Vector2f(-20, 0));
 
 	// Cargar y configurar la textura y los sprites de las vías
 	textureRail = new Texture;
@@ -76,41 +75,38 @@ void Game::InitGame()
 	for (int i = 0; i < 5; i++)
 	{
 		spriteRail[i] = new Sprite(*textureRail);
-		spriteRail[i]->setScale(1.0f, 0.25f);
-		spriteRail[i]->setPosition(0, r0 + i * 100);
+		spriteRail[i]->setScale(1.f, 0.25f);
+		spriteRail[i]->setPosition(300, r0 + i * 100);
 	}
 
 	// Cargar y configurar la textura y el sprite de la caja de texto
 	texturetext = new Texture;
 	texturetext->loadFromFile("Assets/Images/text_box.png");
 	spriteText = new Sprite(*texturetext);
-	spriteText->setScale(0.75, 0.25);
-	spriteText->setOrigin(300, 143.5);
-	spriteText->setPosition(400, 50);
+	spriteText->setPosition(250, 0);
 
 	// Cargar y configurar la textura de los vagones
 	textureWagons = new Texture;
 	textureWagons->loadFromFile("Assets/Images/vagon.png");
 
-	
 	spriteWagon1 = new Sprite(*textureWagons);
 	spriteWagon1->setScale(0.15, 0.15);
-	spriteWagon1->setPosition(x1, r1);
+	spriteWagon1->setPosition(x1, r1 - 50);
 
 	spriteWagon2 = new Sprite(*textureWagons);
 	spriteWagon2->setScale(0.15, 0.15);
-	spriteWagon2->setPosition(x2, r2);
+	spriteWagon2->setPosition(x2, r2 - 50);
 
 	spriteWagon3 = new Sprite(*textureWagons);
 	spriteWagon3->setScale(0.15, 0.15);
-	spriteWagon3->setPosition(x3, r3);
+	spriteWagon3->setPosition(x3, r3 - 50);
 
 	spriteWagon4 = new Sprite(*textureWagons);
 	spriteWagon4->setScale(0.15, 0.15);
-	spriteWagon4->setPosition(x4, r4);
+	spriteWagon4->setPosition(x4, r4 - 50);
 
 	// Cargar la fuente de texto
-	if (!font.loadFromFile("Assets/Fonts/ariblk.ttf"))
+	if (!font.loadFromFile("Assets/Fonts/ARJULIAN.ttf"))
 	{
 		// Error al cargar la fuente
 	}
@@ -118,18 +114,18 @@ void Game::InitGame()
 	// Configurar el texto del cronómetro
 	textCounter.setFont(font);
 	textCounter.setPosition(600, 30);
-	textCounter.setCharacterSize(36);
+	textCounter.setCharacterSize(28);
 	textCounter.setFillColor(Color::Green);
 
 	// Configurar el texto del cálculo
 	textCalculate.setFont(font);
-	textCalculate.setPosition(300, 50);
-	textCalculate.setCharacterSize(30);
+	textCalculate.setPosition(310, 80);
+	textCalculate.setCharacterSize(16);
 
 	// Configurar el texto de la respuesta
 	textAnswer.setFont(font);
-	textAnswer.setPosition(500, 50);
-	textAnswer.setCharacterSize(30);
+	textAnswer.setPosition(405, 80);
+	textAnswer.setCharacterSize(16);
 }
 
 void Game::DoEvents()
@@ -147,9 +143,16 @@ void Game::DoEvents()
 			// Procesar la entrada de texto
 			if ((isColisionate) && (!gameOver) && (seconds > 0)) // Verificar si se ha producido una colisión, el juego no ha terminado y aún queda tiempo
 			{
-				if ((evt->text.unicode >= 48) && (evt->text.unicode <= 57)) // Verificar si el carácter ingresado es un dígito (entre 0 y 9)
+				if ((evt->text.unicode >= 48) && (evt->text.unicode <= 57)) // Verificar si el carácter (código ASCII entre 48 y 57) ingresado es un dígito (entre 0 y 9)
 				{
 					playerInput += evt->text.unicode; // Agregar el número ingresado al string de entrada
+				}
+				else if (evt->text.unicode == 8) // Verificar si se presionó la tecla de retroceso por si el player lo desea (código ASCII 8)
+				{
+					if (!playerInput.empty()) // Verificar si el string de entrada no está vacío
+					{
+						playerInput.pop_back(); // Eliminar el último carácter del string de entrada
+					}
 				}
 				else if (Keyboard::isKeyPressed(Keyboard::Enter)) 
 				{
@@ -288,12 +291,13 @@ void Game::GameOver()
 
 	if (!gameOver) // Si el juego no ha terminado
 	{
-		if ((train->GetPosX() > 540) && (train->GetPosY() == 500)) // Si el tren ha llegado a la manzana
+		if ((train->GetPosX() > 530) && (train->GetPosY() == 450)) // Si el tren ha llegado a la manzana
 		{   
 			audioManager.SetLoopEnabled(false); // Establecer el loop de la musica a false
 			audioManager.StopMusic(); // Detener la música
 			audioManager.PlayVictory(); // Reproducir el sonido de victoria
 			victory = true; // Establecer la bandera de victoria a true
+			textCounter.setPosition(Vector2f(550.0, 30.0));
 			textCounter.setFillColor(Color::Green); // Cambiar el color contador
 			textCounter.setString("YOU WIN!!!"); // Cambiar el texto del contador
 			gameOver = true; // Establecer la bandera de "Game Over" a true
@@ -340,8 +344,9 @@ void Game::GameOver()
 					cout << "CANTIDAD DE VAGONES AHORA: " << train->GetWagonCant() << endl << endl; // Establecer la nueva cantidad de vagones
 					audioManager.SetLoopEnabled(false); // Establecer el loop de la musica a false
 					audioManager.StopMusic(); // Detener la musica
+					textCounter.setPosition(Vector2f(550.0, 30.0));
 					textCounter.setFillColor(Color::Red); // Establecer el texto de el contador a rojo
-					textCounter.setString("KEEP TRYING NEXT TIME!"); // Establecer el texto del contador como derrota
+					textCounter.setString("NEXT TIME!"); // Establecer el texto del contador como derrota
 					victory = false;
 					destroy = true;
 					gameOver = true;
@@ -365,8 +370,9 @@ void Game::GameOver()
 				cout << "CANTIDAD DE VAGONES AHORA: " << train->GetWagonCant() << endl << endl; // Establecer la nueva cantidad de vagones
 				audioManager.SetLoopEnabled(false); // Establecer el loop de la musica a false
 				audioManager.StopMusic(); // Detener la musica
+				textCounter.setPosition(Vector2f(550.0, 30.0));
 				textCounter.setFillColor(Color::Red); // Establecer el texto de el contador a rojo
-				textCounter.setString("KEEP TRYING NEXT TIME!"); // Establecer el texto del contador como derrota
+				textCounter.setString("NEXT TIME!"); // Establecer el texto del contador como derrota
 				victory = false;
 				gameOver = true;
 				destroy = true;
@@ -380,7 +386,7 @@ void Game::UpdateCounter()
 	
 	if (!isColisionate) // Si no hay colisión
 	{
-		textCounter.setFillColor(Color::Yellow); // Establecer el color del contador a amarillo
+		textCounter.setFillColor(Color::White); // Establecer el color del contador a amarillo
 		counter.restart(); // Reiniciar el contador
 		seconds = 5; // Establecer los segundos a 5
 	}
@@ -442,7 +448,7 @@ void Game::Loop()
 		{
 			time2 = time->asSeconds(); // Actualizar el tiempo de la última iteración
 			UpdateCounter();  // Actualizar el contador
-			wnd->clear(Color::White); // Limpiar la ventana
+			wnd->clear(Color::Black); // Limpiar la ventana
 			DoEvents(); // Procesar eventos
 			MoveTrain(); // Mover el tren
 			CheckColitions(); // Comprobar colisiones
@@ -459,19 +465,23 @@ void Game::DrawGame()
 	// Dibujar el fondo
 	wnd->draw(*spriteBackground);
 
+	// Dibujar las vías
+	for (int i = 0; i < 5; i++)
+	{
+		if (i == 4) // Si es la última vía
+		{
+			spriteRail[i]->setScale(0.75f, 0.25f); // Establecer al 0.75 del tamaño en x
+		}
+		spriteRail[i]->setPosition(0, r0 + i * 100);
+		wnd->draw(*spriteRail[i]);
+	}
+
 	// Dibujar los vagones del tren
 	train->Draw(*wnd);
 	wnd->draw(*spriteWagon1);
 	wnd->draw(*spriteWagon2);
 	wnd->draw(*spriteWagon3);
 	wnd->draw(*spriteWagon4);
-
-	// Dibujar las vías
-	for (int i = 0; i < 5; i++)
-	{
-		spriteRail[i]->setPosition(0, r0 + i * 100);
-		wnd->draw(*spriteRail[i]);
-	}
 
 	// Si el juego no ha terminado, dibujar el tren
 	if (!gameOver)

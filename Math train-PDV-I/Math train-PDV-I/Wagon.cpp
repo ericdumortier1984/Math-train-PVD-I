@@ -33,16 +33,13 @@ void Wagon::InitWagon()
 	spriteWagon->setPosition(wagonCoords);
 
 	// Carga la fuente y crea el texto del número del vagón
-	if (!wagonFont.loadFromFile("Assets/Fonts/ariblk.ttf"))
+	if (!wagonFont.loadFromFile("Assets/Fonts/ARJULIAN.ttf"))
 	{
 		// Error al cargar la fuente
 	}
 
 	wagonText.setFont(wagonFont);
-	// Establece la posición del texto en el centro del vagón
-	wagonText.setPosition(spriteWagon->getPosition().x + spriteWagon->getGlobalBounds().width / 2 - wagonText.getGlobalBounds().width / 2,
-		spriteWagon->getPosition().y + spriteWagon->getGlobalBounds().height / 2 - wagonText.getGlobalBounds().height / 2);
-	wagonText.setCharacterSize(22);
+	wagonText.setCharacterSize(30);
 	wagonText.setFillColor(Color::Black);
 	wagonText.setString(to_string(wagonNumber));
 }
@@ -64,7 +61,7 @@ void Wagon::SetPosition(Vector2f _wagonXY)
 	// Establece la posición del vagón y actualiza la posición del texto
 	spriteWagon->setPosition(_wagonXY);
 	wagonText.setPosition(spriteWagon->getPosition().x + spriteWagon->getGlobalBounds().width / 2 - wagonText.getGlobalBounds().width / 2,
-		spriteWagon->getPosition().y + spriteWagon->getGlobalBounds().height / 2 - wagonText.getGlobalBounds().height / 2);
+	spriteWagon->getPosition().y + spriteWagon->getGlobalBounds().height / 2 - wagonText.getGlobalBounds().height / 2 - 15);
 }
 
 

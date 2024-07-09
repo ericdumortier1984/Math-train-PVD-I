@@ -12,7 +12,6 @@ private:
 	Sprite* spriteTrain; // Sprite de la locomotora
 	Texture* textureTrain; // Textura de la locomotora
 	float rail_0, rail_1, rail_2, rail_3, rail_4; // Posiciones de los rieles
-	float wagonPos; // Posición de los vagones
 	int randomNumberWagon; // Número aleatorio para los vagones
 
 public:

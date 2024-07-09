@@ -8,7 +8,6 @@ Train::Train()
 	rail_2 = 300.0;
 	rail_3 = 400.0;
 	rail_4 = 500.0;
-	wagonPos = 50.f; 
 
 	first = last = NULL; // Inicializa los punteros de la lista enlazada
 	LoadList(); // Carga la lista de vagones
@@ -54,7 +53,7 @@ void Train::InitTrain()
 	spriteTrain = new Sprite(*textureTrain);
 	spriteTrain->setTexture(*textureTrain);
 	spriteTrain->setScale(0.15f, 0.15f);
-	spriteTrain->setPosition(10, rail_0);
+	spriteTrain->setPosition(10, rail_0 - 50);
 }
 
 
@@ -150,24 +149,24 @@ void Train::Move(int _vel)
 	spriteTrain->setPosition(x + _vel, y); // Mueve la locomotora (x + _vel)
 
 	// Cambia la posición de la locomotora a los diferentes rieles
-	if ((x > 800 + spriteTrain->getGlobalBounds().width) && (y == rail_0))
+	if ((x > 800 + spriteTrain->getGlobalBounds().width) && (y == rail_0 - 50))
 	{
-		spriteTrain->setPosition(-spriteTrain->getGlobalBounds().width, rail_1);
+		spriteTrain->setPosition(-spriteTrain->getGlobalBounds().width, rail_1 - 50);
 	}
 
-	if ((x > 800 + spriteTrain->getGlobalBounds().width) && (y == rail_1))
+	if ((x > 800 + spriteTrain->getGlobalBounds().width) && (y == rail_1 - 50))
 	{
-		spriteTrain->setPosition(-spriteTrain->getGlobalBounds().width, rail_2);
+		spriteTrain->setPosition(-spriteTrain->getGlobalBounds().width, rail_2 - 50);
 	}
 
-	if ((x > 800 + spriteTrain->getGlobalBounds().width) && (y == rail_2))
+	if ((x > 800 + spriteTrain->getGlobalBounds().width) && (y == rail_2 - 50))
 	{
-		spriteTrain->setPosition(-spriteTrain->getGlobalBounds().width, rail_3);
+		spriteTrain->setPosition(-spriteTrain->getGlobalBounds().width, rail_3 - 50);
 	}
 
-	if ((x > 800 +spriteTrain->getGlobalBounds().width) && (y == rail_3))
+	if ((x > 800 +spriteTrain->getGlobalBounds().width) && (y == rail_3 - 50))
 	{
-		spriteTrain->setPosition(-spriteTrain->getGlobalBounds().width, rail_4);
+		spriteTrain->setPosition(-spriteTrain->getGlobalBounds().width, rail_4 - 50);
 	}
 }
 
